@@ -1,0 +1,27 @@
+<h2>My Urls</h2>
+<div>
+  <label>add Url:</label> <input #addurl />
+  <button (click)="create(addurl.value); addurl.value=''">
+    add
+  </button>
+</div>
+
+<div>
+  <label>search Url:</label> <input #url />
+  <button (click)="search(url.value); url.value=''">
+    search
+  </button>
+</div>
+<ul class="urls">
+  <li *ngFor="let url of urls" (click)="onSelect(url)"
+      [class.selected]="url === selectedUrl">
+    <span class="badge">{{url.url}}</span>
+
+  </li>
+</ul>
+<div *ngIf="selectedUrl">
+  <h2>
+    {{selectedUrl.url | uppercase}} is my Url
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

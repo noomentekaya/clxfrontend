@@ -1,0 +1,11 @@
+<div *ngIf="tinyUrl">
+  <h2>Details of url</h2>
+  <div>
+    <label>tinyUrl:</label>{{url}}</div>
+  <div>
+    <label>expanded: </label>
+    <input [(ngModel)]="tinyUrl.url" placeholder="expanded url" />
+  </div>
+    <div>
+  <button (click)="goBack()">Back</button>
+</div>
